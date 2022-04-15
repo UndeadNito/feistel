@@ -128,11 +128,11 @@ namespace feistel
 
             BitArray degreeBinaryRepresentation = new BitArray(new int[] { degree });
 
-            int finalResult = 1;
+            Int64 finalResult = 1;
             if (degreeBinaryRepresentation[0])
                 finalResult = number;
 
-            int CalculationResult = number;
+            Int64 CalculationResult = number;
             for (int i = 1; i <= (int)Math.Log(degree, 2); i++)
             {
                 CalculationResult *= CalculationResult;
@@ -145,7 +145,7 @@ namespace feistel
                 }
             }
 
-            return finalResult % modulus;
+            return (int)finalResult % modulus;
         }
     }
 
